@@ -16,3 +16,14 @@ function randomHole(holes) {
   lastHole = hole;
   return hole;
 }
+
+function peep() {
+  const time = randomTime(200, 1000);
+  const hole = randomHole(holes);
+  console.log(time, hole);
+  hole.classList.add('up');
+  setTimeout(() => {
+    hole.classList.remove('up');
+    peep();
+  }, time)
+}
